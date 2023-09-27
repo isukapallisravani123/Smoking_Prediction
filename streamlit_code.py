@@ -19,19 +19,16 @@ feature_names = ['age', 'height(cm)', 'weight(kg)', 'waist(cm)', 'systolic',
                  'HDL', 'LDL', 'hemoglobin', 'serum creatinine', 'AST', 'ALT', 'Gtp',
                  'dental caries']
 
-def predict_smoking(features, feature_names):
+def predict_smoking(features, feature_names, loaded_model):
     """Predict smoking based on input features."""
     
-    try:
-        # Prepare input data for prediction
-        input_data = [float(features[feature_name]) for feature_name in feature_names]
-        
-        # Make prediction
-        prediction = loaded_model.predict([input_data])
-        
-        return "Yes" if prediction[0] == 1 else "No"
-    except ValueError:
-        return "Invalid input. Please enter valid numeric values for all features."
+    # Prepare input data for prediction
+    input_data = [float(features[feature_name]) for feature_name in feature_names]
+    
+    # Make prediction
+    prediction = loaded_model.predict([input_data])
+    
+    return "Yes" if prediction[0] == 1 else "No"
 
 
 def main():
