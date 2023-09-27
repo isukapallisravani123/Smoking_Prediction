@@ -16,7 +16,12 @@ import streamlit as st
 with open('random_forest_model.pkl', 'rb') as model_file:
     loaded_model = pickle.load(model_file)
 
-def predict_smoking(features):
+feature_names = ['age', 'height(cm)', 'weight(kg)', 'waist(cm)', 'systolic',
+                 'relaxation', 'fasting blood sugar', 'Cholesterol', 'triglyceride',
+                 'HDL', 'LDL', 'hemoglobin', 'serum creatinine', 'AST', 'ALT', 'Gtp',
+                 'dental caries']
+
+def predict_smoking(features, feature_names):
     """Predict smoking based on input features."""
     
     try:
