@@ -25,8 +25,14 @@ def predict_smoking(features, feature_names):
     """Predict smoking based on input features."""
     
     try:
+        # Debugging: Print user inputs
+        print("User Inputs:", features)
+        
         # Prepare input data for prediction
         input_data = [float(features[feature]) for feature in feature_names]
+        
+        # Debugging: Print input data
+        print("Input Data:", input_data)
         
         # Make prediction
         prediction = loaded_model.predict([input_data])
