@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1lL2gqrEhqEkZXKDap4XQNs8a8yTYkGV9
 """
 
-
-
 import pickle
 import streamlit as st
 
@@ -25,14 +23,8 @@ def predict_smoking(features, feature_names):
     """Predict smoking based on input features."""
     
     try:
-        # Debugging: Print user inputs
-        print("User Inputs:", features)
-        
         # Prepare input data for prediction
-        input_data = [float(features[feature]) for feature in feature_names]
-        
-        # Debugging: Print input data
-        print("Input Data:", input_data)
+        input_data = [float(features[feature_name]) for feature_name in feature_names]
         
         # Make prediction
         prediction = loaded_model.predict([input_data])
@@ -45,14 +37,13 @@ def predict_smoking(features, feature_names):
 def main():
     st.title("Smoking Prediction")
 
-    
-
     # Create a dictionary to store user inputs for features
     user_inputs = {}
 
     # Add user input elements for various features
     for feature_name in feature_names:
-        user_inputs[feature_name] = st.text_input(f"{feature_name.capitalize()}", f" ")
+        user_input = st.text_input(f"{feature_name.capitalize()}", "")  # Initialize with empty string
+        user_inputs[feature_name] = user_input
 
     # Make a prediction when the user clicks the "Predict" button
     if st.button("Predict"):
@@ -61,6 +52,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 import streamlit as st
 import pickle
