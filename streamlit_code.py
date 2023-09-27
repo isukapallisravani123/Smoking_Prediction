@@ -39,11 +39,7 @@ def predict_smoking(features, feature_names):
 def main():
     st.title("Smoking Prediction")
 
-    # Define the list of feature names
-    feature_names = ['age', 'height(cm)', 'weight(kg)', 'waist(cm)', 'systolic',
-                     'relaxation', 'fasting blood sugar', 'Cholesterol', 'triglyceride',
-                     'HDL', 'LDL', 'hemoglobin', 'serum creatinine', 'AST', 'ALT', 'Gtp',
-                     'dental caries']
+    
 
     # Create a dictionary to store user inputs for features
     user_inputs = {}
