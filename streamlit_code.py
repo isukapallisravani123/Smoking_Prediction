@@ -50,7 +50,7 @@ def main():
 
     # Make a prediction when the user clicks the "Predict" button
     if st.button("Predict"):
-        result = predict_smoking(user_inputs)
+        result = predict_smoking(user_inputs, feature_names)
         st.success(f"Prediction: {result}")
 
 if __name__ == '__main__':
