@@ -30,6 +30,7 @@ def predict_smoking(features):
     except ValueError:
         return "Invalid input. Please enter valid numeric values for all features."
 
+
 def main():
     st.title("Smoking Prediction")
 
