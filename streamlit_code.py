@@ -52,7 +52,7 @@ def main():
 
     # Add user input elements for various features
     for feature_name in feature_names:
-        user_inputs[feature_name] = st.text_input(f"{feature_name.capitalize()}", f"Enter {}")
+        user_inputs[feature_name] = st.text_input(f"{feature_name.capitalize()}", f" ")
 
     # Make a prediction when the user clicks the "Predict" button
     if st.button("Predict"):
