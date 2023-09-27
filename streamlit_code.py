@@ -18,14 +18,17 @@ with open('random_forest_model.pkl', 'rb') as model_file:
 
 def predict_smoking(features):
     """Predict smoking based on input features."""
-
-    # Prepare input data for prediction
-    input_data = [float(features[feature]) for feature in feature_names]
-
-    # Make prediction
-    prediction = loaded_model.predict([input_data])
-
-    return "Yes" if prediction[0] == 1 else "No"
+    
+    try:
+        # Prepare input data for prediction
+        input_data = [float(features[feature]) for feature in feature_names]
+        
+        # Make prediction
+        prediction = loaded_model.predict([input_data])
+        
+        return "Yes" if prediction[0] == 1 else "No"
+    except ValueError:
+        return "Invalid input. Please enter valid numeric values for all features."
 
 def main():
     st.title("Smoking Prediction")
